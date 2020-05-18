@@ -12,6 +12,11 @@ body {
   width: 50%;
 }
 
+img {
+  width: 750px;
+  height: 500px;
+}
+
 .carousel-container {
   width: 70%;
   display: flex;
@@ -52,4 +57,10 @@ body {
     background: #fabdbe;
     box-shadow: 1px 1px #f2cd99;
     color: white;
+  }
+
+button {
+    align-self: center;
+    align-items: center;
+    align-content: center;
   }
