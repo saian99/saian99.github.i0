@@ -3,7 +3,8 @@ $(() => {
   const numOfImages = $('.carousel-images').children().length - 1;
 
   $('.next').on('click', () => {
-    $('carousel-images').children().eq(currentImgIndex).css('display', 'none')
+
+    $('.carousel-images').children().eq(currentImgIndex).css('display', 'none')
     if(currentImgIndex < numOfImages) {
       currentImgIndex ++;
     } else {
@@ -22,24 +23,28 @@ $(() => {
     $('.carousel-images').children().eq(currentImgIndex).css('display', 'block')
   })
 
-  $('.button').on('click', event => {
+  $('.info').on('click', event => {
     event.preventDefault()
+    console.log(newData);
 
+    let name = $(event.target).attr('id')
+  console.log(name);
 
+})
 
-  })
-
-//   let character = $(event.target).
-// console.log(character);
-const link = "https://rickandmortyapi.com/api/character/"
+const link = `https://rickandmortyapi.com/api/character/`
+const newData = null;
 
 $.ajax({
   url: link,
   type: 'GET'
-}).then(reports => {
-  console.log(reports);
+}).then(xavier => {
+  console.log(xavier);
+  return xavier;
 })
 .catch(err=>{
   console.log(err);
 })
+
+
 })

@@ -8,6 +8,8 @@ body {
   align-items: center;
 }
 
+
+
 .container > img {
   width: 50%;
 }
@@ -15,6 +17,7 @@ body {
 img {
   width: 750px;
   height: 500px;
+  object-fit: contain;
 }
 
 .carousel-container {
@@ -60,7 +63,9 @@ img {
   }
 
 button {
-    align-self: center;
-    align-items: center;
-    align-content: center;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+
   }
