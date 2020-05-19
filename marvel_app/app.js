@@ -33,8 +33,11 @@ $( async () => {
     // console.log(newData);
     const specificCharactor = newData.filter(object => object.name == name)
     console.log(specificCharactor);
-    const bio = document.createElement('p')
-    bio.innerText = specificCharactor
+    // console.log(newData);
+    const bio = document.createElement('div')
+    // bio.addClass('bio')
+    bio.innerText = specificCharactor[0].episode;
+    console.log(bio);
 
     $('.bottomContainer').append(bio)
 })

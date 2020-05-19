@@ -1,11 +1,12 @@
 
 body {
-  background: #f9f9f9;
+  /* background: blue; */
 }
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* background-color: blue; */
 }
 
 
@@ -72,4 +73,8 @@ button {
 
   .heading {
     height: 350px;
+  }
+
+  .bottomContainer {
+    align-items: center;
   }
