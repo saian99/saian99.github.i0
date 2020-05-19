@@ -15,9 +15,9 @@ body {
 }
 
 img {
-  width: 750px;
+  width: 450px;
   height: 500px;
-  object-fit: contain;
+  /* object-fit: contain; */
 }
 
 .carousel-container {
@@ -68,4 +68,8 @@ button {
   align-self: center;
   align-content: center;
 
+  }
+
+  .heading {
+    height: 350px;
   }

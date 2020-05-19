@@ -1,4 +1,4 @@
-$(() => {
+$( async () => {
   let currentImgIndex = 0
   const numOfImages = $('.carousel-images').children().length - 1;
 
@@ -23,24 +23,30 @@ $(() => {
     $('.carousel-images').children().eq(currentImgIndex).css('display', 'block')
   })
 
+
   $('.info').on('click', event => {
     event.preventDefault()
-    console.log(newData);
-
     let name = $(event.target).attr('id')
   console.log(name);
 
+
+    // console.log(newData);
+    const specificCharactor = newData.filter(object => object.name == name)
+    console.log(specificCharactor);
+    const bio = document.createElement('p')
+    bio.innerText = specificCharactor
+
+    $('.bottomContainer').append(bio)
 })
 
-const link = `https://rickandmortyapi.com/api/character/`
-const newData = null;
 
-$.ajax({
+
+const link = `https://rickandmortyapi.com/api/character/`
+const newData = await $.ajax({
   url: link,
   type: 'GET'
 }).then(xavier => {
-  console.log(xavier);
-  return xavier;
+  return xavier.results;
 })
 .catch(err=>{
   console.log(err);
