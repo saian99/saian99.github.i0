@@ -1,4 +1,5 @@
 $( async () => {
+  // carousel function
   let currentImgIndex = 0
   const numOfImages = $('.carousel-images').children().length - 1;
 
@@ -22,7 +23,9 @@ $( async () => {
     }
     $('.carousel-images').children().eq(currentImgIndex).css('display', 'block')
   })
+// $('.container').css('background-image', (url'(https://i.pinimg.com/originals/cb/84/95/cb8495bfd8a20954e42a16c4c77c7927.jpg'))
 
+// making information divs
   const bio = $('<div>')
   const bioTwo = $('<div>')
   const bioThree = $('<div>')
@@ -41,7 +44,7 @@ $( async () => {
     // console.log(newData);
 
     bio.empty()
-    bio.text(`Name: ${specificCharactor[0].name}`)
+    bio.text(`Name: ${specificCharactor[0].name}`).css('font-color', 'white')
     bioTwo.text(`Species: ${specificCharactor[0].species}`)
     bioThree.text(`gender: ${specificCharactor[0].gender}`)
     bioFour.text(`status: ${specificCharactor[0].status}`)
@@ -59,8 +62,8 @@ const link = 'https://rickandmortyapi.com/api/character/'
 const newData = await $.ajax({
   url: link,
   type: 'GET'
-}).then(xavier => {
-  return xavier.results;
+}).then(data => {
+  return data.results;
 })
 .catch(err=>{
   console.log(err);
