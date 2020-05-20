@@ -23,9 +23,14 @@ $( async () => {
     $('.carousel-images').children().eq(currentImgIndex).css('display', 'block')
   })
 
+  const bio = $('<div>')
+  const bioTwo = $('<div>')
+  const bioThree = $('<div>')
+  const bioFour = $('<div>')
 
   $('.info').on('click', event => {
     event.preventDefault()
+
     let name = $(event.target).attr('id')
   console.log(name);
 
@@ -34,17 +39,23 @@ $( async () => {
     const specificCharactor = newData.filter(object => object.name == name)
     console.log(specificCharactor);
     // console.log(newData);
-    const bio = document.createElement('div')
-    // bio.addClass('bio')
-    bio.innerText = specificCharactor[0].episode;
-    console.log(bio);
+
+    bio.empty()
+    bio.text(`Name: ${specificCharactor[0].name}`)
+    bioTwo.text(`Species: ${specificCharactor[0].species}`)
+    bioThree.text(`gender: ${specificCharactor[0].gender}`)
+    bioFour.text(`status: ${specificCharactor[0].status}`)
+
 
     $('.bottomContainer').append(bio)
+    $('.bottomContainer').append(bioTwo)
+    $('.bottomContainer').append(bioThree)
+    $('.bottomContainer').append(bioFour)
 })
 
 
 
-const link = `https://rickandmortyapi.com/api/character/`
+const link = 'https://rickandmortyapi.com/api/character/'
 const newData = await $.ajax({
   url: link,
   type: 'GET'
